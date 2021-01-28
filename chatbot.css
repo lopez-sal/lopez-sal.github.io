@@ -1,0 +1,9 @@
+body {
+  background-color: lightblue;
+  background-image: url("beach.jpg");
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
