@@ -130,14 +130,14 @@
         </div>
         <!-- Inbenta initialization and configuration. -->
         <script>
-    function myBotAdapter(chatBot){
+    function myBotAdapter(bot){
         chatBot.subscriptions.onSendMessage( function(messageData, next){
             if (messageData.message=="show me an alert"){
                 const messageData = {
                 type:'answer',
                 message:"here's your alert",
                 }
-                chatBot.actions.displayChatbotMessage(messageData);
+                bot.actions.displayChatbotMessage(messageData);
             }
             else{
                 return next(messageData);
