@@ -130,6 +130,21 @@
         </div>
         <!-- Inbenta initialization and configuration. -->
         <script>
+    function myBotAdapter(chatBot){
+        chatBot.subscriptions.onSendMessage( function(messageData, next){
+            if (messageData.message=="show me an alert"){
+                const messageData = {
+                type:'answer',
+                message:"here's your alert",
+                }
+                chatBot.actions.displayChatbotMessage(messageData);
+            }
+            else{
+                return next(messageData);
+            }
+        }
+        );
+    }
     function build() {
         var config = {
     "labels": {
@@ -211,7 +226,7 @@
             inbentaKey: 'Bbm+M0e24PR03GYb5WiNWaGDL3EZ5oAVqc513tdz4UY='
         };
 
-        config['adapters'] = [];
+        config['adapters'] = [myBotAdapter];
 
         
         
@@ -226,20 +241,6 @@
         }
     }, 500);
 
-    chatBot.subscriptions.onSendMessage( function(messageData, next) {
-        if (messageData.message=="show me an alert"){
-            const messageData = {
-                type:'answer',
-                message:"here's your alert",
-            }
-            chatBot.actions.displayChatbotMessage(messageData);
-        }
-        else{
-            return next(messageData);
-        }
-        
-    }  
-);
     </script>
         <!-- End of the Inbenta configuration. -->
 
