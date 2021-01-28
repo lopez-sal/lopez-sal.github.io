@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="chatbot.css">
         <meta charset="utf-8">
         <title>Inbenta Share application</title>
         <link type="image/png" href="https://cdn.inbenta.io/static/images/inbenta-favicon.png" rel="icon">
@@ -11,6 +10,105 @@
         </style>
         <!-- Inbenta SDK. Include the SDK script at the end of the page header where you want integrate the product. -->
         <script src="https://sdk.inbenta.io/chatbot/1.56.2/inbenta-chatbot-sdk.js" integrity="sha384-2v6XQRzPhyoeH9hAMsywfMwkshAdcjjr/iUVW1Xpm5aRu7jktulRhDdlt4AlxOwU" crossorigin="anonymous"></script>
+        <style>
+    @font-face {
+        font-family: 'inbentaOpenSans';
+        src: url('https://cdn.inbenta.io/static/fonts/OpenSans-Regular.woff2') format('woff2'),
+             url('https://cdn.inbenta.io/static/fonts/OpenSans-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+   @font-face {
+        font-family: 'inbentaMontserrat';
+        src: url('https://cdn.inbenta.io/static/fonts/montserrat-light-webfont.woff2') format('woff2'),
+             url('https://cdn.inbenta.io/static/fonts/montserrat-light-webfont.woff') format('woff');
+        font-weight: 300;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'inbentaFont';
+        src: url('https://cdn.inbenta.io/static/fonts/inbenta.woff2') format('woff2'),
+             url('https://cdn.inbenta.io/static/fonts/inbenta.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    body{
+        margin: 0;
+    }
+    .header{
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content:center;
+        -ms-justify-content:center;
+        justify-content:center;
+        -webkit-align-items: center;
+        -ms-align-items: center;
+        align-items: center;
+        padding: 68px 0;
+        background-image:url("https://cdn.inbenta.io/static/images/product/inbenta-shared-app-hero.png");
+        background-size: cover;
+        color: white;
+        height: 188px;
+        box-sizing: border-box;
+    }
+    .header__title{
+        font-family: "inbentaMontserrat";
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .header__subtitle{
+        font-family: "inbentaOpenSans";
+        font-size: 13.5px;
+        line-height: 22px;
+    }
+    .body{
+        background-color:white;
+        height: -moz-calc(100vh - 228px);
+        height: -webkit-calc(100vh - 228px);
+        height: calc(100vh - 228px);
+        padding: 0 40px;
+        overflow: auto;
+    }
+    .body__contents{
+        max-width: 648px;
+        width: 100%;
+        margin: 0px auto;
+        box-sizing: border-box;
+        padding: 40px 0;
+    }
+    .body__contents__gray-block{
+        background-color:#EEEEEE;
+        height: 24px;
+        margin-bottom: 23px;
+        width: 100%;
+    }
+    .footer{
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        -ms-align-items: center;
+        align-items: center;
+        -webkit-justify-content:center;
+        -ms-justify-content:center;
+        justify-content:center;
+        font-family: "inbentaFont";
+        font-size: 18px;
+        height: 40px;
+        padding: 12px 10px;
+        background-color:#212121;
+        box-sizing: border-box;
+    }
+    .footer__logo{
+        color: white;
+    }
+    .footer__logo span{
+        color: #FF1744;
+    }
+</style>
     </head>
     <body>
         <div class="header">
@@ -41,7 +139,7 @@
             "alert-title": "OOOOPS...!",
             "generic-error-message": "The format of your answer is not valid",
             "close-chat": "Do you want to close this chat?<p><div class=\"confirmation-box__subtitle\">You will lose the entire conversation.<\/p><\/div>",
-            "enter-question": "Enter your question",
+            "enter-question": "Ask me anything you want",
             "submit": "Submit",
             "download": "Download",
             "chat-closed": "Chat closed",
@@ -96,8 +194,17 @@
         "camera": "PC",
         "outfit": "skin_1"
     },
+    "conversationWindow":{
+        "position":{
+        "top":null,
+        "left":15,
+        "bottom":15,
+        "right":null
+        }
+    },
     "environment": "preproduction",
     "chatbotId": "601199a6defd7"
+    
 };
         var authorization = {
             domainKey: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJwcm9qZWN0Ijoic2FsdmFkb3JfbG9wZXpfY2hhdGJvdF9lbiIsImRvbWFpbl9rZXlfaWQiOiJCYm5UWjIyVFNXdy0xVk4zT29QVV9nOjoifQ.HuNcPtMBUIHX341ERk2shmeD4p6a1WgWKHh5-AcMvc3Ye_stM9IAIOopiUps7CsrIckXviFjRA0GnNniaKYGzA',
