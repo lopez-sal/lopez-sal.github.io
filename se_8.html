@@ -131,7 +131,7 @@
         <!-- Inbenta initialization and configuration. -->
         <script>
     function myBotAdapter(bot){
-        chatBot.subscriptions.onSendMessage( function(messageData, next){
+        bot.subscriptions.onSendMessage( function(messageData, next){
             if (messageData.message=="show me an alert"){
                 const messageData = {
                 type:'answer',
